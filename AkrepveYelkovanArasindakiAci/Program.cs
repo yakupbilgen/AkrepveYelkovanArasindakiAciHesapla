@@ -29,7 +29,7 @@ namespace AkrepveYelkovanArasindakiAci
 			//12 saatlik bir tur => 360°
 			//Akrep 1 saatlik değişimi => 360 / 12 = 30°
 			//Yelkovan 1 dakikalık değişimi => 360 / 60 = 6°
-			//Yelkovan 1 dk lık değişimi sonucu akrep değişim oranı => 1/12
+			//Yelkovan 1 dk lık değişimi sonucu akrep değişim oranı => 5 / 60 = 1/12°
 
 			double aciSonuc = 0;
 			double aci1 = 0;
@@ -42,7 +42,7 @@ namespace AkrepveYelkovanArasindakiAci
 			}
 			aci1 = akrep * 30;
 			aci2 = yelkovan * 6;
-			aci3 = Math.Abs( 360 - aci1 + aci2 - (aci1 * (1 / 12))-yelkovan/2);
+			aci3 = Math.Abs(360 - aci1 + aci2 - (aci1 * (1 / 12)) - yelkovan / 2);
 			aciSonuc = aci3 % 360;
 
 			if (aciSonuc > 180)
@@ -50,8 +50,7 @@ namespace AkrepveYelkovanArasindakiAci
 				aciSonuc = Math.Abs(aciSonuc - 360);
 			}
 
-			//aci = Convert.ToDouble(akrep * (1 / 12) + (yelkovan * 6));
-			Console.WriteLine("\nSaat" + akrep + ":" + yelkovan + " olduğunda, arasındaki açı => " + aciSonuc);
+			Console.WriteLine("\nSaat " + akrep + ":" + yelkovan + " olduğunda, arasındaki açı => " + aciSonuc);
 		}
 	}
 }
